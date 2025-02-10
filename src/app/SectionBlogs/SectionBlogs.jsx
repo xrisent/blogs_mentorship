@@ -1,9 +1,9 @@
-
+// import React, { useEffect } from 'react';
 import './SectionBlogs.css'
 import axios from 'axios';
 
 const SectionBlogs = () => {
-    
+    // c
 
     // useEffect(()=>{
     //     axios('http://localhost:3001/api/blogs')
