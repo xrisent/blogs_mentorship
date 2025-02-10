@@ -11,7 +11,7 @@ const SectionBlogs = () => {
     
 
     useEffect(()=>{
-        axios('http://localhost:3001/api/blogs')
+        axios('http://localhost:3000/api/blogs')
         .then(({data})=> setBlogs(data))
     },[])
 

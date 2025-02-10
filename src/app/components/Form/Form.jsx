@@ -20,10 +20,9 @@ export default function Form({}) {
       }
       return response.json();
     })
-
-   
   };
 
+  
   return (
     <div className="container">
     <form onSubmit={handleSubmit} className="form">
@@ -44,3 +43,4 @@ export default function Form({}) {
     </div>
   );
 }
+
