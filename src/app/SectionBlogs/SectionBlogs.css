@@ -59,3 +59,14 @@
 .SectionBlogs__btn:hover {
     background-color: rgb(200, 57, 57);
 }
+
+.SectionBlogs__btn__del {
+    width: 100px;
+    height: 30px;
+    background-color: brown;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    margin-top: 30px;
+    margin-left: 400px;
+}

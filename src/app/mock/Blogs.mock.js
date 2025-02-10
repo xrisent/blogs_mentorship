@@ -96,7 +96,7 @@ export function removeBlog(id) {
 }
 
 export function putBlog(id, newData) {
-    const index = Blogs.findIndex(item => item.id === id);
+    const index = Blogs.findIndex(item => item.id === parseInt(id));
     if (index !== -1) {
         Blogs[index] = { ...Blogs[index], ...newData };
     }

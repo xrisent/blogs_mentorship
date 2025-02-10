@@ -26,7 +26,7 @@ export async function DELETE(req){
     try{
         const {id} = await req.json()
 
-        removeBlog(id)
+        removeBlog(parseInt(id))
 
         return new Response(JSON.stringify(Blogs), {status:200})
     }catch(error){
