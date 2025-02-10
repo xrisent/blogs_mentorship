@@ -1,4 +1,10 @@
 export let Blogs = [
+    {
+        id:1,
+        name:"Blog 1",
+        description: "Blog desc",
+        short_desc: "Blog short desc"
+    }
 ]
 
 export function removeBlog(id) {
