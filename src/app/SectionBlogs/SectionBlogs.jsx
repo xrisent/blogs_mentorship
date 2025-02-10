@@ -3,9 +3,11 @@
 import React, { useEffect, useState } from 'react';
 import './SectionBlogs.css'
 import axios from 'axios';
+import { useRouter } from 'next/navigation';
 
 const SectionBlogs = () => {
     const [blogs, setBlogs] = useState([]);
+    const router = useRouter()
     
 
     useEffect(()=>{
@@ -28,8 +30,8 @@ const SectionBlogs = () => {
                     <div key={idx} className="SectionBlogs__box">
                         <h2 className='SectionBlogs__name'>{el.name}</h2>
                         <p className='SectionBlogs__desc'>{el.short_desc}</p>
-                        <button className='SectionBlogs__btn'>Перейти</button>
-                    </div>
+                        <button onClick={()=>router.push(`/blogs/${el.id}`)} className='SectionBlogs__btn'>Перейти</button>
+                    </div>  
                 ))}
             </div>
             
