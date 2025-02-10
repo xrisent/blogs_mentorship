@@ -11,9 +11,18 @@ const SectionBlogs = () => {
     
 
     useEffect(()=>{
-        axios('http://localhost:3001/api/blogs')
+        axios('http://localhost:3000/api/blogs')
         .then(({data})=> setBlogs(data))
     },[])
+
+    const HandleDelete = (id) => {
+        axios.delete('http://localhost:3000/api/blogs', {
+            data: { id }
+        })
+        .then(({ data }) => setBlogs(data))
+        .catch(error => console.error("Ошибка при удалении:", error));
+    }
+    
 
     const itemsPerPage = 4;
     const [currentPage, setCurrentPage] = useState(1);
@@ -31,6 +40,7 @@ const SectionBlogs = () => {
                         <h2 className='SectionBlogs__name'>{el.name}</h2>
                         <p className='SectionBlogs__desc'>{el.short_desc}</p>
                         <button onClick={()=>router.push(`/blogs/${el.id}`)} className='SectionBlogs__btn'>Перейти</button>
+                        <button className='SectionBlogs__btn__del' onClick={()=>HandleDelete(el.id)}>Удалить</button>
                     </div>  
                 ))}
             </div>
