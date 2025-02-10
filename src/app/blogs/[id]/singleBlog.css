@@ -1,3 +1,11 @@
 .singleBlog{
     padding-top: 100px;
+    display: flex;
+    flex-direction: column;
+}
+
+.singleBlog form{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
