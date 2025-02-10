@@ -10,17 +10,16 @@ export default function Form({}) {
 
     fetch("http://localhost:3000/api/blogs", {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data),
     })
-      .then((response) => {
-        if (!response.ok) {
-          return response.text().then((text) => {
-            throw new Error(`Ошибка при создании поста: ${text}`);
-          });
-        }
-        return response.json();
-      })
+    .then((response) => {
+      if (!response.ok) {
+        return response.text().then((text) => {
+          throw new Error(`Ошибка при создании поста: ${text}`);
+        });
+      }
+      return response.json();
+    })
 
    
   };
@@ -30,15 +29,15 @@ export default function Form({}) {
     <form onSubmit={handleSubmit} className="form">
       <label className="label">
         <span>Заголовок:</span>
-        <input type="text" name="title" required className="input" />
+        <input type="text" name="name" required className="input" />
       </label>
       <label className="label">
         <span>Краткое описание:</span>
-        <input type="text" name="description" required className="input" />
+        <input type="text" name="short_desc" required className="input" />
       </label>
       <label className="label">
         <span>Полный текст:</span>
-        <textarea name="content" required className="textarea" />
+        <textarea name="description" required className="textarea" />
       </label>
       <button type="submit" className="button">Создать пост</button>
     </form>
